@@ -1,5 +1,5 @@
-name=New Computer Addon
-id=NewComputerAddon
-description=This is an example addon mod for Computer.
+name=Computer Template Addon
+id=ComputerTemplateAddon
+description=This is an template addon mod for creating new Computer addons.
 poster=poster.png
 require=Computer
