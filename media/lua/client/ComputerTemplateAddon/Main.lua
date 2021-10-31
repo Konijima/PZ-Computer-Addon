@@ -37,7 +37,12 @@ addon.SoftwarePack = {
 
 addon.OnStart = function()
 	print(addon.name, ": My addon has started!")
-	ComputerMod.TriggerEvent("TestEvent")
+	
+	ComputerMod.AddEvent("TestEvent", function(str)
+		print("TestEvent trigged : "..str)
+	end)
+	
+	ComputerMod.TriggerEvent("TestEvent", "my string")
 end
 
 addon.OnUpdate = function()
