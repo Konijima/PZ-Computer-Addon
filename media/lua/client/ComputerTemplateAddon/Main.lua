@@ -35,7 +35,7 @@ addon.SoftwarePack = {
    { "software3", "Debug Software 3", "year", "publisher", "audioName", "coverTexture", 10, "antivirus" },
 }
 
-addon.OnStart = function()
+function addon.OnStart()
 	print(addon.name, ": My addon has started!")
 	
 	ComputerMod.AddEvent("TestEvent", function(str)
@@ -45,7 +45,7 @@ addon.OnStart = function()
 	ComputerMod.TriggerEvent("TestEvent", "my string")
 end
 
-addon.OnUpdate = function()
+function addon.OnUpdate()
 	print(addon.name, ": My addon is updating!")
 end
 
