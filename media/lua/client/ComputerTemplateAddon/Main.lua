@@ -2,14 +2,14 @@ require("Computer/ComputerMod")
 
 local addon = ComputerMod.CreateAddon("TemplateAddon")
 
+addon.ComputerEvents = {
+	{ "TestEvent", { "string" } },
+}
+
 addon.BiosSettings = {
     { "bios1", "Setting 1", "descriptionOn", "descriptionOff", true },
     { "bios2", "Setting 2", "descriptionOn", "descriptionOff", false },
     { "bios3", "Setting 3", "descriptionOn", "descriptionOff", true },
-}
-
-addon.GameFormats = {
-    "dvd", 
 }
 
 addon.SoftwareTypes = {
@@ -34,5 +34,14 @@ addon.SoftwarePack = {
    { "software2", "Debug Software 2", "year", "publisher", "audioName", "coverTexture", 10, "antivirus" },
    { "software3", "Debug Software 3", "year", "publisher", "audioName", "coverTexture", 10, "antivirus" },
 }
+
+addon.OnStart = function()
+	print(addon.name, ": My addon has started!")
+	ComputerMod.TriggerEvent("TestEvent")
+end
+
+addon.OnUpdate = function()
+	print(addon.name, ": My addon is updating!")
+end
 
 ComputerMod.AddAddon(addon)
