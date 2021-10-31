@@ -1,0 +1,5 @@
+name=New Computer Addon
+id=NewComputerAddon
+description=This is an example addon mod for Computer.
+poster=poster.png
+require=Computer
