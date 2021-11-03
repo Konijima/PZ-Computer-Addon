@@ -44,8 +44,8 @@ addon.SoftwarePack = {
 
 
 --- Do stuff when the addon is run
-function addon.Start()
-	print(addon.name..": My addon has started!")
+function addon:Start()
+	print(self.name..": My addon has started!")
 
     -- Bind a function to the new event
 	ComputerMod.AddEvent("TestEvent", function(str)
@@ -58,8 +58,8 @@ end
 
 
 --- Do stuff when the addon update
-function addon.Update()
-	print(addon.name..": My addon is updating!")
+function addon:Update()
+	print(self.name..": My addon is updating!")
 end
 
 
