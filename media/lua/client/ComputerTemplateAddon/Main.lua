@@ -1,52 +1,65 @@
+--- Import ComputerMod first
 require("Computer/ComputerMod")
 
+--- Create your addon and set a unique name
 local addon = ComputerMod.CreateAddon("TemplateAddon")
 
+--- Create new ComputerEvent
 addon.ComputerEvents = {
+----{ eventName, { "string", "number", "boolean", "table", "Computer", "IsoObject", "InventoryItem", } },
 	{ "TestEvent", { "string" } },
 }
 
+--- Create new BiosSettings
 addon.BiosSettings = {
+----{ key, name, descriptionOn, descriptionOff, default },
     { "bios1", "Setting 1", "descriptionOn", "descriptionOff", true },
     { "bios2", "Setting 2", "descriptionOn", "descriptionOff", false },
     { "bios3", "Setting 3", "descriptionOn", "descriptionOff", true },
 }
 
+--- Add new software types
 addon.SoftwareTypes = {
-    "network_sniffer", 
-    "password_cracker", 
+    "network_sniffer",
+    "password_cracker",
 }
 
+--- Add new files
 addon.FilePack = {
-    { "title1", "content1" },
-    { "title2", "content2" },
-    { "title3", "content3" },
+----{ title, content },
+    { "title 1", "content 1" },
 }
 
+--- Add new games
 addon.GamePack = {
-    { "game1", "Debug Game 1", "year", "publisher", "Debug game", 1.0, 1.0, "default", "default", 10, "all" },
-    { "game2", "Debug Game 2", "year", "publisher", "Debug game", 1.0, 1.0, "default", "default", 10, "all" },
-    { "game3", "Debug Game 3", "year", "publisher", "Debug game", 1.0, 1.0, "default", "default", 10, "all" },
+----{ id, title, year, publisher, genre, boredomModifier, stressModifier, audioName, coverTexture, size, format },
+    { "game_1", "Game 1", "1990", "Konijima", "Debug game", 1.0, 1.0, "default", "default", 10, "all" },
 }
 
+--- Add new softwares
 addon.SoftwarePack = {
-   { "software1", "Debug Software 1", "year", "publisher", "audioName", "coverTexture", 10, "antivirus" },
-   { "software2", "Debug Software 2", "year", "publisher", "audioName", "coverTexture", 10, "antivirus" },
-   { "software3", "Debug Software 3", "year", "publisher", "audioName", "coverTexture", 10, "antivirus" },
+----{ id, title, year, publisher, audioName, coverTexture, size, type },
+    { "software1", "Debug Software 1", "year", "publisher", "audioName", "coverTexture", 10, "antivirus" },
 }
 
+
+--- Do stuff when the addon is run
 function addon.OnStart()
 	print(addon.name, ": My addon has started!")
-	
+
 	ComputerMod.AddEvent("TestEvent", function(str)
 		print("TestEvent trigged : "..str)
 	end)
-	
+
 	ComputerMod.TriggerEvent("TestEvent", "my string")
 end
 
+
+--- Do stuff when the addon update
 function addon.OnUpdate()
 	print(addon.name, ": My addon is updating!")
 end
 
+
+--- Add your addon to ComputerMod at the end
 ComputerMod.AddAddon(addon)
