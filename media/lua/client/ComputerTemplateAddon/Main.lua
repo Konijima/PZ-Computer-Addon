@@ -50,12 +50,13 @@ function addon:Start()
     -- Bind a function to the new event
     ComputerMod.AddEvent("TestEvent", function(str)
         print("TestEvent trigged : "..str)
+        --error("Test error in event!")
     end)
 
     ---error("Test Start() error")
 
     -- Trigger the new event
-    ComputerMod.TriggerEvent("TestEvent", "my string")
+    ComputerMod.TriggerEvent("TestEvent", "my string 1")
 end
 
 
