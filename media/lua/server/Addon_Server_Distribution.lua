@@ -1,9 +1,9 @@
-require("Computer/Server_Distribution")
+require "DistributionAPI"
 
 -- Enter your addon name for logs
 local addonName = "ComputerTemplateAddon"
 
-local locationsTable = {
+local distributionTable = {
 
 	-- CrateCompactDiscs
 	{
@@ -23,5 +23,4 @@ local locationsTable = {
 	
 }
 
--- Add your locations table to the computer distribution system
-ComputerAddDistributionLocations(addonName, locationsTable)
+AddDistributionTable(addonName, distributionTable)
