@@ -1,4 +1,4 @@
-require "DistributionAPI"
+require "CommunityAPI"
 
 -- Enter your addon name for logs
 local addonName = "ComputerTemplateAddon"
@@ -13,7 +13,7 @@ local distributionTable = {
         },
     },
 	
-	--- postbox
+	-- postbox
     {
         location = "SuburbsDistributions.all.postbox.items",
         items = {
@@ -23,4 +23,4 @@ local distributionTable = {
 	
 }
 
-AddDistributionTable(addonName, distributionTable)
+CommunityAPI.Server.Distribution.Add(addonName, distributionTable)

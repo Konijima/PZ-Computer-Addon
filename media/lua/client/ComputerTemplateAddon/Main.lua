@@ -14,14 +14,11 @@ addon.ComputerEvents = {
 addon.BiosSettings = {
 ----{ key:string, name:string, descriptionOn:string, descriptionOff:string, default:boolean },
     { "bios1", "Setting 1", "descriptionOn", "descriptionOff", true },
-    { "bios2", "Setting 2", "descriptionOn", "descriptionOff", false },
-    { "bios3", "Setting 3", "descriptionOn", "descriptionOff", true },
 }
 
 --- Add new software types
 addon.SoftwareTypes = {
-    "network_sniffer",
-    "password_cracker",
+    "antivirus",
 }
 
 --- Add new files
