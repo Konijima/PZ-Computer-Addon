@@ -3,7 +3,7 @@ require("CommunityAPI")
 -- Enter your addon name for logs
 local addonName = "ComputerTemplateAddon"
 
-local distributionTable = {
+local distTable = {
 
 	-- CrateCompactDiscs
 	{
@@ -23,4 +23,4 @@ local distributionTable = {
 	
 }
 
-CommunityAPI.Server.Distribution.Add(addonName, distributionTable)
+CommunityAPI.Server.Distribution.Add(addonName, distTable)
