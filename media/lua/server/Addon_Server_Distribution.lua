@@ -1,4 +1,4 @@
-require "CommunityAPI"
+require("CommunityAPI")
 
 -- Enter your addon name for logs
 local addonName = "ComputerTemplateAddon"
